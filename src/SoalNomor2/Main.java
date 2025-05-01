@@ -8,11 +8,13 @@ public class Main {
         int totalBiaya = 0;
         boolean lanjut = true;
 
+
         while (lanjut) {
             System.out.println("Masukkan jenis kendaraan (Motor/Mobil/Truk): ");
             String jenisKendaraan = input.nextLine();
 
             Kendaraan k = new Kendaraan(jenisKendaraan);
+
 
             System.out.println("Masukkan metode durasi parkir (Manual/Otomatis): ");
             String metode = input.nextLine();
@@ -58,6 +60,6 @@ public class Main {
         System.out.println("\n======= RINGKASAN AKHIR =======");
         System.out.println("Total kendaraan   : " + totalKendaraan);
         System.out.println("Total biaya parkir: Rp" + totalBiaya);
-        System.out.println("Terimakahsih! ");
+        System.out.println("Terimakasih! ");
     }
 }

@@ -8,11 +8,13 @@ public class Kendaraan {
         this.JenisKendaraan = JenisKendaraan;
     }
 
+    //hitung biaya parkir perjam(manual)
     public int HitungBiayaParkir (int DurasiParkir) {
         this.LamaParkir = DurasiParkir;
         return BiayaParkir();
     }
 
+    //hitung biaya parkir berdasarkan jam masuk dan jam keluar (otomatis)
     public int HitungBiayaParkir (int JamMasuk, int JamKeluar) {
         this.LamaParkir = JamKeluar - JamMasuk;
         if (this.LamaParkir < 0) {
@@ -22,6 +24,7 @@ public class Kendaraan {
         return BiayaParkir();
     }
 
+    //tarif perjam berdasarkan jenis kendaraan
     private int getTarifPerJam() {
         switch (JenisKendaraan) {
             case "Motor":
@@ -35,6 +38,7 @@ public class Kendaraan {
         }
     }
 
+    //hitung totol biaya parkir
     private int BiayaParkir(){
         int Tarif = getTarifPerJam();
         int Total = LamaParkir * Tarif;
@@ -51,6 +55,7 @@ public class Kendaraan {
                 "Jenis Kendaraan : %s\nLama Parkir     : %d jam\nTotal Biaya     : Rp%d\n", JenisKendaraan, LamaParkir, BiayaParkir()
         );
     }
+
 
     public int getBiayaAkhir() {
         return BiayaParkir();
